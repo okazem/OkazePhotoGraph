@@ -1,6 +1,7 @@
 const { FILE } = require('dns');
 const express = require('express');
 const request = require('request');
+const fetch = require('node-fetch');
 const app = express();
 
 // Google Drive URL of the image you want to retrieve
@@ -23,7 +24,7 @@ app.get('/image.png', (req, res) => {
     catch(error) {
       res.setHeader('Content-Type', 'image/png');
       res.setHeader('Content-Disposition', `inline; filename="image.png"`);
-  
+      console.error(error);
       // Pipe the image data to the response
       request.get(`http://drive.google.com/uc?export=view&id=1Ec3FESUZT0QlMRKQ-CyR-orw65j63sp1`).pipe(res);
       }
