@@ -28,7 +28,7 @@ app.get("/image.png", (req, res) => {
     // Pipe the image data to the response
     request
       .get(
-        `http://drive.google.com/uc?export=view&id=1Ec3FESUZT0QlMRKQ-CyR-orw65j63sp1`
+        `https://drive.google.com/file/d/1yXMh_rpONu1RqGuo8iKUWSbUSsGRZbpR/view?usp=sharing`
       )
       .pipe(res);
   }
